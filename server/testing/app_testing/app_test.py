@@ -296,7 +296,7 @@ class TestRecipeIndex:
 
             with client.session_transaction() as session:
                 
-                session['user_id'] = None
+                session.pop('user_id', None) #session['user_id'] = None
 
             response = client.get('/recipes')
             
